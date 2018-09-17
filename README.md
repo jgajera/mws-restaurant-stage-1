@@ -1,3 +1,63 @@
+# Project Overview
+*****
+For the **Restaurant Reviews** projects, you will incrementally convert a static webpage to a mobile-ready web application. In **Stage One**, you will take a static design that lacks accessibility and convert the design to be responsive on different sized displays and accessible for screen reader use. You will also add a service worker to begin the process of creating a seamless offline experience for your users.
+
+### Specification
+You have been provided the code for a restaurant reviews website. The code has a lot of issues. It’s barely usable on a desktop browser, much less a mobile device. It also doesn’t include any standard accessibility features, and it doesn’t work offline at all. Your job is to update the code to resolve these issues while still maintaining the included functionality. 
+
+
+## Table of Contents
+
+* [Instructions](#instructions)
+* [Resources](#resources)
+* [Contributing](#contributing)
+* [Authors](#authors)
+* [Miscellaneous Notes](#miscnotes)
+
+## Instructions
+To get a copy of this repo, please follow these instructions:
+### Prerequisites
+You'll want `git` installed on your machine. For help setting up `git`, follow instructions from [this free course from Udacity](https://www.udacity.com/course/version-control-with-git--ud123). Also, familiarity with HTML, CSS, and Javascript will set you up for success.
+### Installation
+Fork this repo into your own account. If you'd prefer not to fork / you're not comfortable with Github:
+
+(1) Clone with SSH to your local machine (just copy this into your terminal after you've changed the terminal's directory to the spot where you want to download these files)
+```
+git@github.com:jgajera/mws-restaurant-stage-1.git
+```
+(1) OR clone with HTTPS to your local machine (just copy this into your terminal after you've changed the terminal's directory to the spot where you want to download these files)
+```
+https://github.com/jgajera/mws-restaurant-stage-1.git
+```
+(2) Navigate to the folder you indicated in the terminal. If you didn't change folders in the terminal (with the `cd` command, usually), then your files are probably in one of your top-level computer files, like User -> You -> Somewhere in here.
+
+
+### Was it successful?
+You should see all of the files from the [Github repo](https://github.com/jgajera/mws-restaurant-stage-1) in your folder system on your local computer! If not, please raise an [issue](https://github.com/jgajera/mws-restaurant-stage-1/issues) - you likely have a problem with your Git or Github configuration.
+
+## Resources
+I used the following resources:
+*****
+- 
+
+## Contributing
+Not accepting contributions! Feel free to open an issue if you find one. Thanks!
+
+## Authors
+- Several instructors from Udacity provided the starter code in the [Udacity repo](https://github.com/udacity/mws-restaurant-stage-1)
+- Me! If I do say so myself ;-)
+
+## MiscNotes
+This project is based on the starter code from Udacity FEND's repo for this project.
+
+Here is the [rubric for this project](https://review.udacity.com/#!/rubrics/1090/view).
+
+
+
+////////////////////////////////////////////////////////////////////////////
+
+
+
 # Mobile Web Specialist Certification Course
 ---
 #### _Three Stage Course Material Project - Restaurant Reviews_
