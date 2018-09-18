@@ -73,10 +73,10 @@ fillCuisinesHTML = (cuisines = self.cuisines) => {
  */
 initMap = () => {
   self.newMap = L.map('map', {
-        center: [40.722216, -73.987501],
-        zoom: 12,
-        scrollWheelZoom: false
-      });
+    center: [40.722216, -73.987501],
+    zoom: 12,
+    scrollWheelZoom: false
+  });
   L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.jpg70?access_token={mapboxToken}', {
     mapboxToken: 'pk.eyJ1IjoiamdhamVyYSIsImEiOiJjam01bXk0NGcwdnp6M3BxcDh2NjZtZ2UwIn0.Ptl2Q6RJY1P18GjRA_moMw',
     maxZoom: 18,
@@ -191,13 +191,16 @@ addMarkersToMap = (restaurants = self.restaurants) => {
     // Add marker to the map
     const marker = DBHelper.mapMarkerForRestaurant(restaurant, self.newMap);
     marker.on("click", onClick);
+
     function onClick() {
       window.location.href = marker.options.url;
     }
     self.markers.push(marker);
   });
 
-} 
+  addImgAlts();
+
+}
 /* addMarkersToMap = (restaurants = self.restaurants) => {
   restaurants.forEach(restaurant => {
     // Add marker to the map
@@ -209,3 +212,25 @@ addMarkersToMap = (restaurants = self.restaurants) => {
   });
 } */
 
+
+
+
+// add alt attributes to every restaurant image on the home page
+function addImgAlts() {
+  // grab array of images
+  let imgArray = [...document.querySelectorAll(".restaurant-img")];
+  // grab array length
+  let imgArrayLength = imgArray.length;
+  // grab array of restaurant names to use as alt attr
+  let nameArray = [...document.querySelectorAll("#restaurants-list li h1")];
+  // create blank array to push new values into
+  let nameArrayNew = [];
+  // loop over name array to create new alt attr and push into empty array
+  for (i = 0; i < imgArrayLength; i++) {
+    nameArrayNew.push(nameArray[i].innerHTML + " restaurant image");
+  }
+  // loop over image array to set alt attr to new array value
+  for (j = 0; j < imgArrayLength; j++) {
+    imgArray[j].setAttribute('alt', nameArrayNew[j]);
+  }
+}
