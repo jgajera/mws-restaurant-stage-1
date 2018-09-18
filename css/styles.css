@@ -1,5 +1,20 @@
 @charset "utf-8";
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* CSS Document */
 
 body,
@@ -81,6 +96,21 @@ section {
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* ====================== Navigation ====================== */
 
 nav {
@@ -112,11 +142,41 @@ nav h1 a {
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* Display list items side by side */
 
 #breadcrumb li {
   display: inline;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /* Add a slash symbol (/) before/behind each list item */
@@ -128,12 +188,42 @@ nav h1 a {
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* Add a color to all links inside the list */
 
 #breadcrumb li a {
   color: #0275d8;
   text-decoration: none;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /* Add a color on mouse-over */
@@ -144,6 +234,21 @@ nav h1 a {
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* ====================== Map ====================== */
 
 #map {
@@ -151,6 +256,21 @@ nav h1 a {
   width: 100%;
   background-color: #ccc;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /* ====================== Restaurant Filtering ====================== */
@@ -181,6 +301,21 @@ nav h1 a {
   padding: 0 10px;
   width: 200px;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /* ====================== Restaurant Listing ====================== */
@@ -241,6 +376,21 @@ nav h1 a {
   text-decoration: none;
   text-transform: uppercase;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /* ====================== Restaurant Details ====================== */
@@ -349,4 +499,211 @@ nav h1 a {
 
 #restaurant-hours td {
   color: #666;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+ * Below is Janki's added CSS for responsiveness
+*/
+
+
+/* Styles for all screens and both pages */
+
+#restaurants-list,
+#reviews-list {
+  display: grid;
+  justify-items: center;
+}
+
+
+
+/* home page CSS  - all screens*/
+
+.home #maincontent #restaurants-list .restaurant-img {
+  height: auto;
+  width: 100%;
+  min-height: 50px;
+}
+
+.home #maincontent .filter-options select {
+  width: 90%;
+}
+
+.home #maincontent .filter-options {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  height: auto;
+  padding: 2% 0;
+}
+
+.home #maincontent .filter-options h2 {
+  grid-column-start: 1;
+  grid-column-end: 4;
+  text-align: center;
+}
+
+.home nav h1 {
+  padding-top: 2%;
+}
+
+
+
+
+/* restaurant page CSS - all screens */
+
+.inside #map-container {
+  top: 0;
+  height: 90vh;
+  z-index: 9;
+}
+
+.inside #restaurant-container,
+.inside #map-container,
+.inside #reviews-container {
+  width: 100%;
+  position: relative;
+}
+
+.inside #breadcrumb {
+  width: 100%;
+  padding: 15px 1%;
+}
+
+.inside #footer {
+  width: 100%;
+  padding: 25px 0;
+}
+
+.inside #restaurant-container,
+.inside #reviews-container {
+  padding: 25px 0;
+}
+
+.inside #restaurant-cuisine {
+  width: 100%;
+}
+
+.inside #restaurant-img {
+  width: 100%;
+  height: auto;
+}
+
+.inside nav h1 {
+  padding-top: 2%;
+}
+
+.inside #breadcrumb,
+.inside #restaurant-name {
+  text-align: center;
+}
+
+.inside #restaurant-hours,
+.inside #restaurant-address {
+  padding: 0 5%;
+}
+
+.inside #reviews-container h2,
+.inside #reviews-list {
+  padding: 5%;
+}
+
+.inside #reviews-list li {
+  padding: 5%;
+}
+
+.inside .leaflet-top.leaflet-left {
+  bottom: 0;
+  top: unset;
+}
+
+
+
+
+
+
+/* Extra small devices (phones, 600px and lower) */
+
+@media only screen and (max-width: 600px) {
+  #restaurants-list,
+  #reviews-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+
+@media only screen and (min-width: 600px) {
+  #restaurants-list {
+    grid-template-columns: 1fr;
+  }
+  #reviews-list {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+
+
+
+
+
+/* Medium devices (landscape tablets, 768px and up) */
+
+@media only screen and (min-width: 768px) {
+  #restaurants-list {
+    grid-template-columns: 1fr 1fr;
+  }
+  #reviews-list {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+
+
+
+
+
+/* Large devices (laptops/desktops, 992px and up) */
+
+@media only screen and (min-width: 992px) {
+  #restaurants-list {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+
+
+
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+
+@media only screen and (min-width: 1200px) {
+  #restaurants-list {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  #reviews-container h2 {
+    padding: 5px 2%;
+    margin-bottom: 0;
+  }
+  #reviews-list {
+    padding: 2%;
+  }
 }
