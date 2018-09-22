@@ -233,4 +233,44 @@ function addImgAlts() {
   for (j = 0; j < imgArrayLength; j++) {
     imgArray[j].setAttribute('alt', nameArrayNew[j]);
   }
+
+  // add aria roles to <div>s with no semantic tags
+  let mapDiv = document.querySelector('#map');
+  mapDiv.setAttribute('role', 'application');
+
+  let selectNeighborhood = document.querySelector('#neighborhoods-select');
+  selectNeighborhood.setAttribute('aria-label', 'Select a neighborhood');
+  selectNeighborhood.setAttribute('role', 'tablist');
+
+  let selectCuisine = document.querySelector('#cuisines-select');
+  selectCuisine.setAttribute('aria-label', 'Select a cuisine');
+  selectCuisine.setAttribute('role', 'tablist');
+
+  let ariaHome = document.querySelector('.home header a');
+  console.log(ariaHome);
+  ariaHome.setAttribute('aria-label', 'Home');
+
+
+  // add tab-indexes
+  let homeTitle = document.querySelector('.home header a');
+  homeTitle.tabIndex = 1;
+  selectNeighborhood.tabIndex = 2;
+  selectCuisine.tabIndex = 3;
+
+  let restaurantButtons = [...document.querySelectorAll("#restaurants-list a")];
+  console.log(restaurantButtons);
+  let restaurantButtonCount = restaurantButtons.length;
+  let initialTabIndex = 4;
+
+  for (k = 0; k < restaurantButtonCount; k++) {
+    restaurantButtons[0].tabIndex = initialTabIndex;
+    if (k > 0) {
+      let lastNum = k - 1;
+      let currentTabIndex = restaurantButtons[lastNum].tabIndex;
+      restaurantButtons[k].tabIndex = currentTabIndex + 1;
+    }
+  }
+
+  let mapTabIndex = restaurantButtonCount + initialTabIndex;
+  mapDiv.tabIndex = mapTabIndex;
 }
