@@ -247,7 +247,6 @@ function addImgAlts() {
   selectCuisine.setAttribute('role', 'tablist');
 
   let ariaHome = document.querySelector('.home header a');
-  console.log(ariaHome);
   ariaHome.setAttribute('aria-label', 'Home');
 
 
@@ -258,7 +257,6 @@ function addImgAlts() {
   selectCuisine.tabIndex = 3;
 
   let restaurantButtons = [...document.querySelectorAll("#restaurants-list a")];
-  console.log(restaurantButtons);
   let restaurantButtonCount = restaurantButtons.length;
   let initialTabIndex = 4;
 
@@ -273,4 +271,15 @@ function addImgAlts() {
 
   let mapTabIndex = restaurantButtonCount + initialTabIndex;
   mapDiv.tabIndex = mapTabIndex;
+}
+
+
+
+// register service worker
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker
+  .register('/sw.js')
+  .catch(function(err) {
+    console.log('ServiceWorker registration failed: ',err);
+  });
 }
