@@ -77,18 +77,3 @@ Not accepting contributions! Feel free to open an issue if you find one. Thanks!
 This project is based on the starter code from Udacity FEND's repo for this project.
 
 Here is the [rubric for this project](https://review.udacity.com/#!/rubrics/1090/view).
-
-
-
-////////////////////////////////////////////////////////////////////////////
-
-
-
-### What do I do from here?
-
-
-
-3. Explore the provided code, and start making a plan to implement the required features in three areas: responsive design, accessibility and offline use.
-
-4. Write code to implement the updates to get this site on its way to being a mobile-ready website.
-
