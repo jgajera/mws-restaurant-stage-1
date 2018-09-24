@@ -63,7 +63,7 @@ I used the following resources:
 - Google Developers Docs - [Service Workers](https://developers.google.com/web/fundamentals/primers/service-workers/)
 - StackOverflow for registering SW - [link](https://stackoverflow.com/questions/30336685/404-error-when-trying-to-register-serviceworker)
 - Service Workers in-depth explanation - [Flaviocopes](https://flaviocopes.com/service-workers/)
-- Chrome in-browser service worker page - [Chrome browser](chrome://inspect/#service-workers)
+- Chrome in-browser service worker page - chrome://inspect/#service-workers
 
 
 ## Contributing
