@@ -161,6 +161,7 @@ createRestaurantHTML = (restaurant) => {
   const image = document.createElement('img');
   image.className = 'restaurant-img';
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
+  image.alt = `${restaurant.name} Restaurant`;
   li.append(image);
 
   const name = document.createElement('h1');
@@ -198,8 +199,8 @@ addMarkersToMap = (restaurants = self.restaurants) => {
     self.markers.push(marker);
   });
 
-  addImgAlts();
 
+  adda11y();
 }
 /* addMarkersToMap = (restaurants = self.restaurants) => {
   restaurants.forEach(restaurant => {
@@ -216,28 +217,8 @@ addMarkersToMap = (restaurants = self.restaurants) => {
 
 
 // add alt attributes to every restaurant image on the home page
-function addImgAlts() {
-  // grab array of images
-  let imgArray = [...document.querySelectorAll(".restaurant-img")];
-  // grab array length
-  let imgArrayLength = imgArray.length;
-  // grab array of restaurant names to use as alt attr
-  let nameArray = [...document.querySelectorAll("#restaurants-list li h1")];
-  // create blank array to push new values into
-  let nameArrayNew = [];
-  // loop over name array to create new alt attr and push into empty array
-  for (i = 0; i < imgArrayLength; i++) {
-    nameArrayNew.push(nameArray[i].innerHTML + " restaurant image");
-  }
-  // loop over image array to set alt attr to new array value
-  for (j = 0; j < imgArrayLength; j++) {
-    imgArray[j].setAttribute('alt', nameArrayNew[j]);
-  }
-
+function adda11y() {
   // add aria roles to <div>s with no semantic tags
-  let mapDiv = document.querySelector('#map');
-  mapDiv.setAttribute('role', 'application');
-
   let selectNeighborhood = document.querySelector('#neighborhoods-select');
   selectNeighborhood.setAttribute('aria-label', 'Select a neighborhood');
   selectNeighborhood.setAttribute('role', 'tablist');
@@ -273,13 +254,11 @@ function addImgAlts() {
   mapDiv.tabIndex = mapTabIndex;
 }
 
-
-
 // register service worker
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker
-  .register('/sw.js')
-  .catch(function(err) {
-    console.log('ServiceWorker registration failed: ',err);
-  });
+    .register('/sw.js')
+    .catch(function(err) {
+      console.log('ServiceWorker registration failed: ', err);
+    });
 }
